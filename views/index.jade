@@ -1,5 +1,37 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  // Main UI
+  .jumbotron.jumbotron-main(parallax-background='', parallax-ratio='0.6')
+    .container
+      .row
+        .col-lg-2.col-md-1.col-sm-1
+        .col-lg-3.col-md-4.col-sm-3.col-xs-12.jumbotron-content
+          img.center-block(width='279', height='285.75', src='http://i47.photobucket.com/albums/f154/uninvisible/YqDV2_zpspwcdfvck.png', alt='Vault Boy')
+        .col-lg-5.col-md-6.col-md-offset-1.col-sm-6.col-sm-offset-2.col-xs-10.col-xs-offset-1.text-center-xs.bio-heading.jumbotron-content
+          h1.jumbotron-content Hello, world!
+          .professions-text
+            | Front-End Web Devoloper
+            br
+            |             Copy-Editor
+            br
+            |             Graphic Designer
+            br
+        .col-lg-1.col-xs-1
+  .container
+    .row
+      .col-xs-3
+        a(href='http://www.github.com/warlyware', target='_blank')
+          img.img-responsive.social-icon.center-block(src='img/github.png')
+      .col-xs-3
+        a(href='http://www.twitter.com/warlyware', target='_blank')
+          img.img-responsive.social-icon.center-block(src='img/twitter.png')
+      .col-xs-3
+        a(href='http://behance.net/danwardfl', target='_blank')
+          img.img-responsive.social-icon.center-block(src='img/behance.png')
+      .col-xs-3
+        a(href='mailto:danward@gmail.com', target='_blank')
+          img.img-responsive.social-icon.center-block(src='img/email.png')
+
+  // Concatonated JavaScript Files
+  script(src='js/script.js')
