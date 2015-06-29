@@ -7,12 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/test', function(req, res, next) {
-  res.render('test', {});
+  res.render('test', { title: 'Test Page', repeat: 42, timestamp: new Date() });
 });
 
 
-router.get('/aboutus', function(req, res, next) {
-  res.render('aboutus', {});
-});
+// router.get('/aboutus', function(req, res, next) {
+//   res.render('aboutus', {});
+// });
 
 module.exports = router;
