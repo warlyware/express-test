@@ -20,14 +20,24 @@ router.get('/quotes', function(req, res) {
 router.post('/quotes', function(req, res) {
   // console.log(req.body);
   var newQuote = req.body.quote;
+  console.log(jsonData.quotes.indexOf(newQuote));
+
+  if (!newQuote) {
+    res.status(404).json('We need text for that quote');
+    return;
+  } 
+  if (jsonData.quotes.indexOf(newQuote) > -1) {
+    res.status(404).json('Quote already added');
+    return;
+  }
   jsonData.quotes.push(newQuote);
   fs.writeFile('data.json', JSON.stringify(jsonData), function(err) {
     if (err) {
       console.error(err);
       res.status(500).send('Could not save the quote, please try later');
     } else {
-      res.redirect('/quotes');
     }
+    res.redirect('/quotes');
   });
 });
 
