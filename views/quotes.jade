@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  form(method='POST', action='quotes')
+    input(name='quote')
+    button(type='submit') submit
+
+  ul
+    each quote in quotes
+      li= quote
