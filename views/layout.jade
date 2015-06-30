@@ -3,8 +3,9 @@ doctype html
 html
   header
     title Something
-
-  body
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js')
+    script(src='javascripts/quotes.js')
+  body(ng-app='quotesApp' ng-controller="QuotesCtrl")
 
     block content
 

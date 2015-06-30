@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'This is the index page' });
+  res.render('index', { quotes: jsonData.quotes });
 });
 
 router.get('/about', function(req, res, next) {
@@ -14,7 +14,7 @@ router.get('/about', function(req, res, next) {
 
 router.get('/quotes', function(req, res) {
   console.log('Got it!');
-  res.render('quotes', { quotes: jsonData.quotes });
+  res.json(jsonData);
 });
 
 router.post('/quotes', function(req, res) {

@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1
-    | This is the home page
+  form(method='POST', action='quotes')
+    input(name='quote')
+    button(type='submit') submit
+
+  ul
+    li(ng-repeat="quote in quotes") {{quote}}
